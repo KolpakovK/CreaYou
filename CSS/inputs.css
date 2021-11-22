@@ -1,0 +1,146 @@
+.btn{
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    transition: all 1s;
+    z-index: 2;
+}
+
+.btn:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    border-radius: 50px;
+    opacity: 0.05;
+    transition: all 1s;
+    z-index: -1;
+}
+
+.btn.text-white:before{
+    background-color: var(--Light);
+}
+
+.btn.text-dark:before{
+    background-color: var(--Light);
+    opacity: 1;
+}
+
+.btn:hover:before{
+    width: calc(100% + 24px);
+    opacity: 1;
+}
+
+.btn.text-white:hover{
+    color: var(--Black)
+}
+
+.pills{
+    display: flex;
+}
+
+.pill{
+    margin: 0px;
+    padding: 8px 24px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: all 1s;
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+}
+
+.pill:hover{
+    color: var(--Black);
+}
+
+.pill::before{
+    content: "";
+    display: block;
+    position: absolute;
+    height: calc(100% + 8px) ;
+    left: -12px;
+    top: -4px;
+    width: 0%;
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--Light);
+    transition: all 1s;
+}
+
+.pill:hover::before{
+    opacity: 1;
+    width: calc(100% + 24px);
+    
+}
+
+.pill.active::before{
+    opacity: 1;
+    width: calc(100% + 24px);
+}
+
+.pill.active{
+    color: var(--Black);
+}
+
+.input{
+    display: flex;
+}
+
+.input label{
+    font-size: 40px;
+    line-height: 53px;
+    font-family: 'Styrene A Web';
+}
+
+.input input{
+    padding-left: 24px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--Black);
+    font-size: 40px;
+    line-height: 53px;
+    font-family: 'Styrene A Web';
+    font-weight: 700;
+}
+
+.input input::placeholder{
+    color: var(--CreayouGrey);
+    font-size: 40px;
+    line-height: 53px;
+    font-family: 'Styrene A Web';
+    font-weight: 700;
+}
+
+@media screen and (max-width:768px) {
+    .input{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .input label{
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 16px;
+    }
+    
+    .input input{
+        text-align: center;
+        font-size: 24px;
+        line-height: 25px;
+        padding-left: 0px;
+    }
+    
+    .input input::placeholder{
+        text-align: center;
+        font-size: 24px;
+        line-height: 25px;
+    }
+
+}
